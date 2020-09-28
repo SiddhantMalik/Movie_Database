@@ -5,26 +5,26 @@ const cancelButton = document.body.children[1].children[1].children[0];
 const backdrop = document.getElementById('backdrop');
 
 
-function functionCancelButtonClickHandler(){
+const functionCancelButtonClickHandler = () => {
   functionMovieModalToggle();
-  functionBackdropToggle()
 }
 
-function functionAddButtonClickHandler(){
+const functionAddButtonClickHandler = () => {
   functionMovieModalToggle();
-  functionBackdropToggle()
 }
 
-function functionMovieModalToggle(){
+const functionMovieModalToggle = () => {
   addMovieModal.classList.toggle('visible');
+  functionBackdropToggle();
   
 }
 
-function functionBackdropToggle(){
+ functionBackdropToggle = () => {
 backdrop.classList.toggle('visible');
 }
 
 addButton.addEventListener("click", functionAddButtonClickHandler);
+backdrop.addEventListener("click", functionMovieModalToggle);
 cancelButton.addEventListener("click", functionCancelButtonClickHandler);
 
 
