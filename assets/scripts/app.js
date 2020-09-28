@@ -2,6 +2,9 @@ const addMovieModal = document.getElementById("add-modal");
 
 const addButton = document.querySelector("header button");
 
+const resetButton = document.body.children[1].children[1].children[2];
+
+
 const finalAddButton = document.body.children[1].children[1].children[1];
 
 const cancelButton = document.body.children[1].children[1].children[0];
@@ -14,6 +17,12 @@ const userRating = document.getElementById("rating");
 
 const movies = [];
 
+function clearInputs(){
+  userImageUrl.value = "";
+  userTitle.value = "";
+  userRating.value = "";
+  
+}
 var elm;
 
 function isValidURL(u) {
@@ -80,8 +89,13 @@ finalAddButton.addEventListener("click", () => {
     movies.push(newMovie);
     console.log(movies);
     functionMovieModalToggle();
+    clearInputs();
   } else {
     alert("Check your Input! Invalid Input Detected.");
     return;
   }
 });
+
+resetButton.addEventListener('click',() => {
+ clearInputs();
+} );
